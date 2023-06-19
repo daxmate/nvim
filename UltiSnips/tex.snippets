@@ -1,0 +1,65 @@
+snippet tex "A latex document template" b
+%!tex program = lualatex
+\documentclass{${1:article}}
+
+\begin{document}
+
+\end{document}
+endsnippet
+
+snippet env "A latex environment snippet" b
+\begin{${1:tikzpicture}}
+
+\end{${1/(\w+).*/$1/}}
+endsnippet
+
+
+snippet '([^ ]+)\*(\d+)' "repeat" r
+`!p snip.rv = match.group(0) * int(match.group(2))`
+endsnippet
+
+snippet '((\d+)\s*([+/xX÷*-])\s*(\d+)\s*)=\s*' "calculator" r
+`!p formula = match.group(1).replace('x', '*')
+formula =formula.replace('X', '*')
+formula = formula.replace('÷', '/')
+snip.rv = f'{match.group(2)} {match.group(3) } {match.group(4)} = {eval(formula)}'`
+endsnippet
+
+snippet "[^ ]+[,:][^ ]+(\s+--\s+[^ ]+[,:][^ ]+)*" "Input coordinates" r
+`!p
+snip.rv = re.sub(r'(\s*)([^ ]+)([,:])([^ ]+)', r'\1(\2\3 \4)', match.group(0))
+`
+endsnippet
+
+snippet tikzcode "align tikz and code in one line" b
+\noindent
+\begin{minipage}{.3\textwidth}
+	\begin{tikzpicture}
+		$1
+	\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.69\textwidth}
+\begin{texcode}
+\begin{tikzpicture}
+	% put codes here
+\end{tikzpicture}
+\end{texcode}
+\end{minipage}
+endsnippet
+
+
+snippet tikzcode2 "align tikz and code up and down" b
+\noindent
+	\begin{tikzpicture}
+		$1
+	\end{tikzpicture}
+
+\noindent
+\begin{texcode}
+\begin{tikzpicture}
+	% put codes here
+\end{tikzpicture}
+\end{texcode}
+endsnippet
+
+

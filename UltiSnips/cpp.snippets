@@ -1,0 +1,28 @@
+snippet eulerheader
+#pragma once
+#include <iostream>
+
+class Solution
+{
+public:
+
+};
+endsnippet
+
+snippet eulertest
+#include "gtest/gtest.h"
+#include "../euler/euler$1.h"
+
+Solution solution;
+TEST(EULER$1, $2)
+{
+	$3
+}
+
+int main(int argc, char *argv[])
+{
+	testing::InitGoogleTest();
+	return RUN_ALL_TESTS();
+}
+endsnippet
+
