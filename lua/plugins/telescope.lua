@@ -1,5 +1,5 @@
 local telescope = require("telescope")
-require("telescope").setup {defaults = {file_ignore_patterns = {"googletest"}}}
+require("telescope").setup {defaults = {file_ignore_patterns = {"external"}}}
 local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope.setup {
