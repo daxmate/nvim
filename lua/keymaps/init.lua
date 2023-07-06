@@ -57,10 +57,10 @@ keymap("n", "<leader>ec",
 keymap("n", "<leader>eu", ":e! ~/Library/Rime/wubi86_user.dict.yaml<cr>",
        silent_opts)
 keymap("n", "<leader>ez", ":e! ~/.zshrc<cr>", silent_opts)
-keymap("n", "<leader>ep", ":e! ~/Library/Application Support/V2RayX/pac/pac.js<cr>", opts)
+keymap("n", "<leader>ep",
+       ":e! ~/Library/Application Support/V2RayX/pac/pac.js<cr>", opts)
 keymap("n", "<leader>ec", ":Telescope find_files cwd=~/.config/nvim<cr>", opts)
-keymap("n", "<leader>eu", ":e! ~/Library/Rime/wubi86_user.dict.yaml<cr>",
-       opts)
+keymap("n", "<leader>eu", ":e! ~/Library/Rime/wubi86_user.dict.yaml<cr>", opts)
 
 -- shortcuts for retrieving from registers, all start with `r`
 keymap({"i", "c"}, "<leader>r", "<c-r><c-p>", opts) -- after <leader>r input a register name 0, +, " etc.
@@ -131,18 +131,59 @@ keymap("n", "<leader>cq", "<Plug>(CMakeClose)", opts)
 keymap("n", "<F11>", ":lua require('dapui').open()<cr>")
 keymap("n", "<F12>", ":lua require('dapui').close()<cr>")
 
--- lsp quickfix settings
-local function quickfix()
-    vim.lsp.buf.code_action({
-        filter = function(a)
-            return a.isPreferred
-        end,
-        apply = true
-    })
-end
-
-vim.keymap.set("n", "<leader>qf", quickfix, opts)
-
-
 -- ctest
 vim.cmd("cnoreabbrev ctest CMakeTest -V -R")
+
+-- nvim-dap key bindings
+keymap("n", "<F1>", function()
+    require("dap").continue()
+end, silent_opts)
+keymap("n", "<F3>", function()
+    require("dap").step_over()
+end, silent_opts)
+keymap("n", "<F2>", function()
+    require("dap").step_into()
+end, silent_opts)
+keymap("n", "<F4>", function()
+    require("dap").step_out()
+end, silent_opts)
+keymap("n", "<leader>db", function()
+    require("dap").toggle_breakpoint()
+end, silent_opts)
+keymap("n", "<leader>dB", function()
+    require("dap").set_breakpoint()
+end, silent_opts)
+keymap("n", "<leader>dg", function()
+    require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+end, silent_opts)
+keymap("n", "<leader>dr", function()
+    require("dap").repl.open()
+end, silent_opts)
+keymap("n", "<leader>dl", function()
+    require("dap").run_last()
+end, silent_opts)
+keymap("n", "<leader>dc", function()
+    require("dap").run_to_cursor()
+end, silent_opts)
+keymap({"n", "v"}, "<leader>dh", function()
+    require("dap.ui.widgets").hover()
+end, silent_opts)
+keymap({"n", "v"}, "<leader>dp", function()
+    require("dap.ui.widgets").preview()
+end, silent_opts)
+keymap("n", "<leader>df", function()
+    local widgets = require("dap.ui.widgets")
+    widgets.centered_float(widgets.frames)
+end, silent_opts)
+keymap("n", "<leader>ds", function()
+    local widgets = require("dap.ui.widgets")
+    widgets.centered_float(widgets.scopes)
+end, silent_opts)
+
+keymap("n", "<leader>uo", function()
+    require("dapui").open()
+end, silent_opts)
+keymap("n", "<leader>uc", function()
+    require("dapui").close()
+end, silent_opts)
+
