@@ -127,16 +127,35 @@ keymap("n", "<leader>cs", "<Plug>(CMakeSwitch)", opts)
 keymap("n", "<leader>co", "<Plug>(CMakeOpen)", opts)
 keymap("n", "<leader>cq", "<Plug>(CMakeClose)", opts)
 
--- debug
-keymap("n", "<F11>", ":lua require('dapui').open()<cr>")
-keymap("n", "<F12>", ":lua require('dapui').close()<cr>")
-
 -- ctest
 vim.cmd("cnoreabbrev ctest CMakeTest -V -R")
 
 -- nvim-dap key bindings
 keymap("n", "<F1>", function()
-    require("dap").continue()
+    local dap, dapui = require("dap"), require("dapui")
+    require'fzf-lua'.files({
+        cmd = 'fd --no-ignore -t x',
+        actions = {
+            ['default'] = function(selected)
+                dap.configurations.cpp = {
+                    {
+                        name = "Launch",
+                        type = "codelldb",
+                        request = "launch",
+                        program = require'fzf-lua'.path.entry_to_file(
+                            selected[1]).path,
+                        cwd = "${workspaceFolder}",
+                        stopOnEntry = false,
+                        args = {},
+                        runInTerminal = true
+                    }
+                }
+                -- run DAP
+                dapui.open()
+                dap.continue()
+            end
+        }
+    })
 end, silent_opts)
 keymap("n", "<F3>", function()
     require("dap").step_over()
@@ -187,3 +206,8 @@ keymap("n", "<leader>uc", function()
     require("dapui").close()
 end, silent_opts)
 
+-- terminate dap and close dapui window
+keymap("n", "<leader>dt", function()
+    require("dap").terminate()
+    require("dapui").close()
+end, silent_opts)
