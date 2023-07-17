@@ -12,7 +12,6 @@ return require("packer").startup(function(use)
 
     -- use "glepnir/dashboard-nvim" -- pop a dashboard on start
     use "nvim-tree/nvim-web-devicons"
-
     use "nvim-tree/nvim-tree.lua" -- file explorer
 
     use "sheerun/vim-polyglot" -- syntax highlight
