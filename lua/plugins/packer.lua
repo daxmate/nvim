@@ -64,6 +64,7 @@ return require("packer").startup(function(use)
         after = "nvim-treesitter",
         requires = "nvim-treesitter/nvim-treesitter"
     })
+    use "jessekelighine/vim-SimpleColorsLatex"
 
     -- fzf
     use "junegunn/fzf"
