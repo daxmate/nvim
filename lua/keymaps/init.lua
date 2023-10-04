@@ -50,6 +50,8 @@ keymap("n", "<leader>s", ":%s///g<left><left>", opts)
 keymap("c", "%%", "getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'",
        {expr = true})
 
+keymap("n", "L", "Lzz", silent_opts)
+
 -- edit most used files shortcuts, all start with `e`
 keymap("n", "<leader>ev", ":e! $MYVIMRC<cr>", silent_opts)
 keymap("n", "<leader>ec",
@@ -114,6 +116,7 @@ keymap({"n", "i", "v"}, "<leader>sb", ":TagbarToggle<cr>", opts) -- toggle tagba
 -- keybindings for telescope
 keymap("n", "<leader>tf", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>to", ":Telescope oldfiles<cr>", opts)
+keymap("n", "<leader>tr", ":Telescope registers<cr>", opts)
 keymap("n", "<leader>tj", ":Telescope jumplist<cr>", opts)
 keymap("n", "<leader>tg", ":Telescope live_grep<cr>", opts)
 keymap("n", "<leader>tb", ":Telescope buffers<cr>", opts)

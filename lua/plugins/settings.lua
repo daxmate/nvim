@@ -1,4 +1,3 @@
-require("nvim-autopairs").setup {}
 require("nvim-tree").setup {}
 require("toggleterm").setup {}
 require("gitsigns").setup {}
@@ -16,3 +15,4 @@ require("plugins.snips")
 require("plugins.dap")
 require("plugins.telescope")
 require("nvim-dap-virtual-text").setup()
+require("plugins.autopair")
