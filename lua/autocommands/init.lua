@@ -37,10 +37,11 @@ augroup tex_key_binding
 	autocmd FileType tex :set tabstop=4
 augroup end
 
-augroup cpp_key_binding
+augroup cpp_tex_key_binding
 	autocmd!
-	autocmd FileType cpp :inoremap <buffer> <leader>; <right>;
-	autocmd FileType cpp :inoremap <buffer> <leader>: <esc>A;
+	autocmd FileType cpp,tex :inoremap <buffer> <leader>; <right>;
+	autocmd FileType cpp,tex :inoremap <buffer> <leader>: <esc>A;
+	autocmd FileType cpp,tex :inoremap <buffer> <leader>E <esc>A
 augroup end
 
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
