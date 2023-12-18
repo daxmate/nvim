@@ -27,6 +27,9 @@ vim.cmd("cnoreabbrev hr vert bo h")
 -- jk to Escape
 keymap("i", "jk", "<esc>", opts)
 
+-- L to Lzz
+keymap("n", "L", "Lzz", silent_opts)
+
 -- half page up and down remapping
 keymap("n", "<space>d", "Lzz", opts)
 keymap("n", "<space>u", "Hzz", opts)

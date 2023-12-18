@@ -48,3 +48,7 @@ vim.g.cmake_link_compile_commands = 1
 vim.cmd("let g:cmake_build_dir_location = expand('%:h') . '/build'")
 vim.cmd("let $GTEST_COLOR = 1")
 
+vim.cmd('let g:latexindent_opt="-m"')
+
+-- settings for Neoformat
+g['neoformat_try_formatprg'] = 1
