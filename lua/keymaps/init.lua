@@ -217,3 +217,6 @@ keymap("n", "<leader>dt", function()
     require("dap").terminate()
     require("dapui").close()
 end, silent_opts)
+
+-- system shortcut for copy
+keymap('v', '<leader>y', '"+y', opts)
