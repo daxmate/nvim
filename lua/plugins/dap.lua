@@ -10,7 +10,7 @@ dap.adapters.codelldb = {
     port = "${port}",
     executable = {
         -- CHANGE THIS to your path!
-        command = "/opt/local/codelldb-aarch64-darwin/extension/adapter/codelldb",
+        command = "/Users/dax/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb",
         args = {"--port", "${port}"}
 
         -- On windows you may have to uncomment this:
