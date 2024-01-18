@@ -8,7 +8,8 @@ require"lspconfig".lua_ls.setup { -- lua
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
                 globals = {
-                    "vim", "string", "table", "require", "Candidate", "yield", "local", "tex"
+                    "vim", "string", "table", "require", "Candidate", "yield",
+                    "local", "tex"
                 }
             },
             workspace = {
