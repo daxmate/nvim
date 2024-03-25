@@ -18,5 +18,5 @@ telescope.setup {
             -- layout_config = { mirror=true }, -- mirror preview pane
         }
     },
-    defaults = {file_ignore_patterns = {"build/*", "external"}}
+    defaults = {file_ignore_patterns = {"build", "external", "Debug"}}
 }
