@@ -1,5 +1,4 @@
 local telescope = require("telescope")
-require("telescope").setup {defaults = {file_ignore_patterns = {"external"}}}
 local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope.setup {
@@ -19,9 +18,5 @@ telescope.setup {
             -- layout_config = { mirror=true }, -- mirror preview pane
         }
     },
-    defaults = {
-        file_ignore_patterns = {
-            "build", "external"
-        }
-    }
+    defaults = {file_ignore_patterns = {"build/*", "external"}}
 }
