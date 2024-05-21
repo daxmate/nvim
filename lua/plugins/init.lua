@@ -1,10 +1,3 @@
-vim.cmd([[
-augroup autosource
-    autocmd!
-    autocmd BufWritePost <buffer> % luafile %
-augroup end
-]])
-
 require("plugins.packer")
 
 local ok, _ = pcall(require, "plugins.settings")

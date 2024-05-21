@@ -26,14 +26,6 @@ g.loaded_netrwPlugin = 1
 -- filetype issue handler
 vim.cmd("filetype plugin indent on")
 
--- autosource
-vim.cmd([[
-augroup autosource
-    autocmd!
-    autocmd BufWritePost,BufEnter <buffer> % luafile %
-augroup end
-]])
-
 -- hide tilde symbol beyond end of buffer
 vim.cmd("highlight EndOfBuffer ctermfg=bg")
 

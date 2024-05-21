@@ -1,10 +1,3 @@
-vim.cmd([[
-augroup autosource
-  autocmd!
-  autocmd BufWritePost <buffer> % luafile %
-augroup end
-]])
-
 local silent_opts = {noremap = true, silent = true}
 local opts = {noremap = true}
 -- local term_opts = {silent = true}
