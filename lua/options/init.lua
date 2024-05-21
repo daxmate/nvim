@@ -51,3 +51,6 @@ vim.cmd('let g:latexindent_opt="-m"')
 
 -- settings for Neoformat
 g['neoformat_try_formatprg'] = 1
+
+-- zoxide
+vim.cmd('let g:zoxide_prefix = "j"')

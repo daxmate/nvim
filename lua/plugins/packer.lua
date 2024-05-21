@@ -2,6 +2,8 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim" -- The packer manager itself
     use "nvim-lua/plenary.nvim" -- a common plugin used by many other plugins
 
+    use "nanotee/zoxide.vim" -- use zoxide in vim
+
     use "Pocco81/auto-save.nvim" -- auto save
 
     -- themes and appearance
