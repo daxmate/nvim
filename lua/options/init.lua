@@ -27,7 +27,14 @@ g.loaded_netrwPlugin = 1
 vim.cmd("filetype plugin indent on")
 
 -- hide tilde symbol beyond end of buffer
-vim.cmd("highlight EndOfBuffer ctermfg=bg")
+vim.cmd([[
+    if ! exists("g:gui_vimr")
+    " Here goes some VimR specific settings like
+    highlight EndOfBuffer ctermfg=bg
+    else
+    let g:python3_host_prog = '/Users/dax/.virtualenvs/dax/bin/python3'
+    endif
+    ]])
 
 -- set vimtex build dir
 vim.cmd("let vimtex_compiler_latexmk = {'out_dir': 'build'}")
