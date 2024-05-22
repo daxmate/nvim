@@ -31,9 +31,8 @@ vim.cmd([[
     if ! exists("g:gui_vimr")
     " Here goes some VimR specific settings like
     highlight EndOfBuffer ctermfg=bg
-    else
-    let g:python3_host_prog = '/Users/dax/.virtualenvs/pynvim/bin/python3'
     endif
+    let g:python3_host_prog = '/Users/dax/.virtualenvs/pynvim/bin/python3'
     ]])
 
 -- set vimtex build dir
