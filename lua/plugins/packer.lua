@@ -11,6 +11,8 @@ return require("packer").startup(function(use)
     use "vim-airline/vim-airline"
     use "vim-airline/vim-airline-themes"
     use "famiu/bufdelete.nvim" -- keep window layout while deleting buffer
+    -- use "HiPhish/rainbow-delimiters.nvim"
+    use "luochen1990/rainbow"
 
     -- use "glepnir/dashboard-nvim" -- pop a dashboard on start
     use "nvim-tree/nvim-web-devicons"

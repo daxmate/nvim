@@ -53,3 +53,6 @@ g['neoformat_try_formatprg'] = 1
 
 -- zoxide
 vim.cmd('let g:zoxide_prefix = "j"')
+
+-- rainbow parenthese
+vim.cmd('let g:rainbow_active = 1')
