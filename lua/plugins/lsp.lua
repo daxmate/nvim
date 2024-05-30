@@ -42,6 +42,7 @@ require("lspconfig").clangd.setup {} -- cpp
 require("lspconfig").pyright.setup {} -- python
 
 -- require("lspconfig").ltex.setup { } -- tex
-require("lspconfig").texlab.setup {}
+-- require("lspconfig").texlab.setup {}
+require("lspconfig").digestif.setup {}
 
 require("lspconfig").cmake.setup {} -- cmake
