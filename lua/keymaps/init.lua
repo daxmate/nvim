@@ -20,9 +20,6 @@ vim.cmd("cnoreabbrev hr vert bo h")
 -- jk to Escape
 keymap("i", "jk", "<esc>", opts)
 
--- L to Lzz
-keymap("n", "L", "Lzz", silent_opts)
-
 -- half page up and down remapping
 keymap("n", "<space>d", "Lzz", opts)
 keymap("n", "<space>u", "Hzz", opts)
@@ -45,8 +42,6 @@ keymap("n", "<leader>s", ":%s///g<left><left>", opts)
 
 keymap("c", "%%", "getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'",
        {expr = true})
-
-keymap("n", "L", "Lzz", silent_opts)
 
 -- edit most used files shortcuts, all start with `e`
 keymap("n", "<leader>ev", ":e! $MYVIMRC<cr>", silent_opts)
