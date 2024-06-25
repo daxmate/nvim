@@ -126,6 +126,7 @@ keymap("n", "<leader>cs", "<Plug>(CMakeSwitch)", opts)
 keymap("n", "<leader>co", "<Plug>(CMakeOpen)", opts)
 keymap("n", "<leader>cq", "<Plug>(CMakeClose)", opts)
 keymap("n", "<leader>cl", "<Plug>(CMakeClean)", opts)
+keymap("n", "<leader>cr", ":CMakeRun ", opts)
 
 -- ctest
 vim.cmd("cnoreabbrev ctest CMakeTest -V -R")
