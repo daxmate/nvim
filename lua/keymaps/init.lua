@@ -211,3 +211,7 @@ end, silent_opts)
 
 -- system shortcut for copy
 keymap('v', '<leader>y', '"+y', opts)
+
+
+-- vifm
+keymap('n', '<leader>vf', ':Vifm -c only<cr>')
