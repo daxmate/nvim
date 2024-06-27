@@ -73,6 +73,7 @@ return require("packer").startup(function(use)
     -- fzf
     use "junegunn/fzf"
     use "ibhagwan/fzf-lua"
+    use "is0n/fm-nvim"
 
     -- programming
     use "preservim/tagbar" -- tagbar
