@@ -92,4 +92,6 @@ return require("packer").startup(function(use)
     use "nvim-telescope/telescope-dap.nvim"
     use "theHamsta/nvim-dap-virtual-text"
 
+    -- tabby
+    use "TabbyML/vim-tabby"
 end)
