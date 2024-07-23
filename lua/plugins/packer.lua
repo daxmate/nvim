@@ -94,4 +94,7 @@ return require("packer").startup(function(use)
 
     -- tabby
     use "TabbyML/vim-tabby"
+
+    -- markdown preview 
+    use "iamcco/markdown-preview.nvim"
 end)
