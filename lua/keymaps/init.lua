@@ -82,7 +82,7 @@ keymap("n", "<leader>wH", "<c-w>H", opts)
 keymap("n", "<leader>wL", "<c-w>L", opts)
 keymap("n", "<leader>wK", "<c-w>K", opts)
 keymap("n", "<leader>wJ", "<c-w>J", opts)
-keymap("n", "<leader>vs", ":vs<cr>", opts) -- split vertically
+keymap("n", "<leader>vs", ":vs<cr><c-w>l", opts) -- split vertically
 keymap("n", "<leader>sp", ":vs<cr>", opts) -- split horizontally
 keymap("t", "<leader>wh", "<c-\\><c-n>:wincmd h<cr>", silent_opts) -- move cursor to other window from terminal
 keymap("t", "<leader>wj", "<c-\\><c-n>:wincmd j<cr>", silent_opts) -- move cursor to other window from terminal
