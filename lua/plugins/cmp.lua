@@ -100,14 +100,25 @@ cmp.setup {
         end
     },
     sources = {
-       {name = "ultisnips"}, {name = "nvim_lsp"}, {name = "luasnip"},
-        {name = "buffer"}, {name = "path"}, {name = "nvim_lua"}
-    },
-    confirm_opts = {behavior = cmp.ConfirmBehavior.Replace, select = false},
-    window = {
-        documentation = {
-            border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
-        }
-    },
-    experimental = {ghost_text = {enable=true}, native_menu = false}
+        {name = "ultisnips"},
+        {name = "nvim_lsp"},
+        {name = "luasnip"},
+        {name = "buffer"},
+        {name = "path"},
+        {name = "nvim_lua"},
+        {
+            name = 'omni',
+            option = {disable_omnifuncs = {'v:lua.vim.lsp.omnifunc'}}
+        },
+        confirm_opts = {behavior = cmp.ConfirmBehavior.Replace, select = false},
+        window = {
+            documentation = {
+                border = {
+                    "╭", "─", "╮", "│", "╯", "─", "╰", "│"
+                }
+            }
+        },
+        experimental = {ghost_text = {enable = true}, native_menu = false}
+    }
 }
+
