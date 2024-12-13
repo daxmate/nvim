@@ -94,8 +94,11 @@ return require("packer").startup(function(use)
     use "theHamsta/nvim-dap-virtual-text"
 
     -- tabby
-    use "TabbyML/vim-tabby"
+    -- use "TabbyML/vim-tabby"
 
     -- markdown preview 
     use "iamcco/markdown-preview.nvim"
+
+    -- ime switch
+    use "keaising/im-select.nvim"
 end)

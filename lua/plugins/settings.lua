@@ -3,6 +3,7 @@ require("toggleterm").setup {}
 require("gitsigns").setup {}
 require("fzf-lua").setup {}
 require("neodev").setup {library = {plugins = {"nvim-dap-ui"}, types = true}}
+require("im_select").setup{}
 
 require("telescope").load_extension("dap")
 
