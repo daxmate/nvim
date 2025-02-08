@@ -135,13 +135,19 @@ $1
 endsnippet
 
 snippet penum "parenthisised enumerate" b
-\begin{enumerate}[label=(\arabic*)]
+\begin{penum}
 \item $1
-\end{enumerate}
+\end{penum}
 endsnippet
 
 snippet cenum "circled enumerate" b
-\begin{enumerate}[label=\protect\circled{\arabic*}]
+\begin{cenum}
 \item $1
-\end{enumerate}
+\end{cenum}
+endsnippet
+
+snippet solution "math exam solution environment" b
+\begin{solution}
+$1
+\end{solution}
 endsnippet
