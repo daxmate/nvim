@@ -156,3 +156,14 @@ snippet wf "warningfilter" b
 \WarningFilter{latexfont}{Font shape}
 \WarningFilter{latexfont}{Some font}
 endsnippet
+
+snippet secfont "section font setting" b
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\LARGE\bfseries\color{blue}}  % 格式（字体/字号/颜色）
+  {\thesection}                             % 标签（编号样式）
+  {1em}                                     % 编号与标题间距
+  {}                                        % 标题前修饰
+  [\titlerule]                              % 标题后添加下划线
+
+endsnippet
