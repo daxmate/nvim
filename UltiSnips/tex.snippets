@@ -9,7 +9,7 @@ endsnippet
 
 snippet env "A latex environment snippet" b
 \begin{${1:tikzpicture}}
-
+	$2
 \end{${1/(\w+).*/$1/}}
 endsnippet
 
@@ -25,7 +25,7 @@ formula = formula.replace('÷', '/')
 snip.rv = f'{match.group(2)} {match.group(3) } {match.group(4)} = {eval(formula)}'`
 endsnippet
 
-snippet "[^ ]+[,:][^ ]+(\s+--\s+[^ ]+[,:][^ ]+)*" "Input coordinates" r
+snippet "[^ ]+[,:][^ ]+(\s+--\s+[^ ]+[,:][^ ]+)* " "Input coordinates" r
 `!p
 snip.rv = re.sub(r'(\s*)([^ ]+)([,:])([^ ]+)', r'\1(\2\3 \4)', match.group(0))
 `
