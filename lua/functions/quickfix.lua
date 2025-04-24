@@ -43,3 +43,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		end, { buffer = ev.buf })
 	end,
 })
+
+vim.api.nvim_create_user_command(
+	"DatePadZero",
+	[[:%s/\v(\d{4})-(\d{1,2})-(\d{1,2})/\=printf('%04d-%02d-%02d', submatch(1), submatch(2), submatch(3))/g]],
+	{}
+)
