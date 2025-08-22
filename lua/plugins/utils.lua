@@ -6,8 +6,18 @@ return {
 	"tpope/vim-surround", -- operations on pairs
 	"tpope/vim-repeat",
 	"sbdchd/neoformat",
-	"windwp/nvim-autopairs",
 	"easymotion/vim-easymotion", -- easymotion
 	"nanotee/zoxide.vim", -- use zoxide in vim
 	"SirVer/ultisnips", -- ultisnips
+	{
+		"nvim-tree/nvim-tree.lua", -- file explorer
+		config = function()
+			-- 禁用 netrw
+			vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
+			require("nvim-tree").setup()
+		end,
+	},
+	"nvim-tree/nvim-web-devicons",
+	"famiu/bufdelete.nvim",
 }
