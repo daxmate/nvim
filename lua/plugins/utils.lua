@@ -7,7 +7,17 @@ return {
 	"tpope/vim-repeat",
 	"sbdchd/neoformat",
 	"easymotion/vim-easymotion", -- easymotion
-	"nanotee/zoxide.vim", -- use zoxide in vim
+	{
+		"nanotee/zoxide.vim", -- use zoxide in vim
+		config = function()
+			vim.api.nvim_create_user_command("J", function()
+				vim.cmd("Z")
+			end, {})
+			vim.api.nvim_create_user_command("Ji", function()
+				vim.cmd("Zi")
+			end, {})
+		end,
+	},
 	"SirVer/ultisnips", -- ultisnips
 	{
 		"nvim-tree/nvim-tree.lua", -- file explorer
