@@ -208,5 +208,14 @@ keymap("n", "<leader>dt", function()
 	require("dapui").close()
 end, silent_opts)
 
--- system shortcut for copy
+-- 拷贝到系统剪贴板
 keymap("v", "<leader>y", '"+y', opts)
+
+-- 设置 F5 键为执行 Python 代码
+-- 设置 F5 键为执行 Python 代码
+vim.api.nvim_set_keymap(
+	"n",
+	"<F5>",
+	':w<CR>:lua if vim.bo.filetype == "python" then vim.api.nvim_command("term python3 " .. vim.fn.expand("%")) else print("Not a Python file") end<CR>',
+	{ noremap = true, silent = true }
+)
