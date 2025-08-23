@@ -1,6 +1,14 @@
 return {
 	{ "preservim/tagbar" }, -- tagbar
-	{ "cdelledonne/vim-cmake" }, -- cmake
+	{
+		"cdelledonne/vim-cmake",
+		config = function()
+			-- CMake 配置
+			vim.g.cmake_link_compile_commands = 1
+			vim.g.cmake_build_dir_location = vim.fn.expand("%:h") .. "/build"
+			vim.env.GTEST_COLOR = "1"
+		end,
+	}, -- cmake
 	{
 		"akinsho/toggleterm.nvim",
 		config = function()
@@ -73,6 +81,8 @@ return {
 			-- vimtex 配置
 			vim.g.vimtex_compiler_latexmk = { out_dir = "build" }
 			vim.g.vimtex_view_method = "sioyek"
+			-- latexindent 配置
+			vim.g.latexindent_opt = "-m"
 		end,
 	},
 	{ "mfussenegger/nvim-dap" },

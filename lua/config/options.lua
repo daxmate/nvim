@@ -19,6 +19,7 @@ end
 
 -- maplocalleader
 g.maplocalleader = "," -- 设置 vimtex 插件的 maplocalleader
+g.mapleader = ","
 
 -- 文件类型和缩进
 vim.cmd("filetype plugin indent on")
@@ -27,14 +28,3 @@ vim.cmd("filetype plugin indent on")
 if not g.gui_vimr then
 	vim.cmd("highlight EndOfBuffer ctermfg=bg")
 end
-
--- CMake 配置
-g.cmake_link_compile_commands = 1
-vim.g.cmake_build_dir_location = vim.fn.expand("%:h") .. "/build"
-vim.env.GTEST_COLOR = "1"
-
--- latexindent 配置
-g.latexindent_opt = "-m"
-
--- Neoformat
-g.neoformat_try_formatprg = 1
