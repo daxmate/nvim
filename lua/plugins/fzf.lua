@@ -21,5 +21,4 @@ return {
 			vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = "Buffers" })
 		end,
 	},
-	{ "is0n/fm-nvim" },
 }

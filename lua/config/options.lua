@@ -8,6 +8,9 @@ local options = {
 	number = true, -- 显示行号
 	textwidth = 120,
 	colorcolumn = "+1",
+	tabstop = 4,
+	shiftwidth = 4,
+	softtabstop = 4,
 }
 
 for k, v in pairs(options) do
@@ -17,8 +20,6 @@ end
 -- maplocalleader
 g.maplocalleader = "," -- 设置 vimtex 插件的 maplocalleader
 
-
-
 -- 文件类型和缩进
 vim.cmd("filetype plugin indent on")
 
@@ -26,7 +27,6 @@ vim.cmd("filetype plugin indent on")
 if not g.gui_vimr then
 	vim.cmd("highlight EndOfBuffer ctermfg=bg")
 end
-
 
 -- CMake 配置
 g.cmake_link_compile_commands = 1
@@ -38,4 +38,3 @@ g.latexindent_opt = "-m"
 
 -- Neoformat
 g.neoformat_try_formatprg = 1
-

@@ -1,5 +1,5 @@
-local silent_opts = {noremap = true, silent = true}
-local opts = {noremap = true}
+local silent_opts = { noremap = true, silent = true }
+local opts = { noremap = true }
 -- local term_opts = {silent = true}
 local keymap = vim.keymap.set
 
@@ -40,25 +40,21 @@ keymap("n", "<leader>s", ":%s///g<left><left>", opts)
 
 -- expand active buffer folder
 
-keymap("c", "%%", "getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'",
-       {expr = true})
+keymap("c", "%%", "getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'", { expr = true })
 
 -- edit most used files shortcuts, all start with `e`
 keymap("n", "<leader>ev", ":e! $MYVIMRC<cr>", silent_opts)
-keymap("n", "<leader>ec",
-       ":e! ~/Library/Application Support/V2RayX/pac/pac.js<cr>", silent_opts)
-keymap("n", "<leader>eu", ":e! ~/Library/Rime/wubi86_user.dict.yaml<cr>",
-       silent_opts)
+keymap("n", "<leader>ec", ":e! ~/Library/Application Support/V2RayX/pac/pac.js<cr>", silent_opts)
+keymap("n", "<leader>eu", ":e! ~/Library/Rime/wubi86_user.dict.yaml<cr>", silent_opts)
 keymap("n", "<leader>ez", ":e! ~/.zshrc<cr>", silent_opts)
-keymap("n", "<leader>ep",
-       ":e! ~/Library/Application Support/V2RayX/pac/pac.js<cr>", opts)
+keymap("n", "<leader>ep", ":e! ~/Library/Application Support/V2RayX/pac/pac.js<cr>", opts)
 keymap("n", "<leader>ec", ":Telescope find_files cwd=~/.config/nvim<cr>", opts)
 keymap("n", "<leader>eu", ":e! ~/Library/Rime/wubi86_user.dict.yaml<cr>", opts)
 
 -- shortcuts for retrieving from registers, all start with `r`
-keymap({"i", "c"}, "<leader>r", "<c-r><c-p>", opts) -- after <leader>r input a register name 0, +, " etc.
-keymap({"i", "c"}, "<leader>rc", "<c-r><c-p>\"", opts) -- retrieve data from unnamed register
-keymap({"i", "c"}, "<leader>ry", "<c-r><c-p>0", opts) -- retrieve data from 0 register which stores data from yank operation
+keymap({ "i", "c" }, "<leader>r", "<c-r><c-p>", opts) -- after <leader>r input a register name 0, +, " etc.
+keymap({ "i", "c" }, "<leader>rc", '<c-r><c-p>"', opts) -- retrieve data from unnamed register
+keymap({ "i", "c" }, "<leader>ry", "<c-r><c-p>0", opts) -- retrieve data from 0 register which stores data from yank operation
 keymap("c", "<leader>ra", "<c-r><c-a>", opts) -- <WORD> under cursor
 keymap("c", "<leader>rw", "<c-r><c-w>", opts) -- <word> under cursor
 keymap("c", "<leader>rp", "<c-r><c-p>", opts) -- expand path under cursor
@@ -102,7 +98,7 @@ keymap("n", "<leader>sl", ":set list!<cr>", opts) -- toggle list mode
 -- keymap("n", "<leader>sd", ":Dashboard<cr>", opts) -- open bashboard
 keymap("n", "<leader>st", ":ToggleTerm direction=float<cr>", silent_opts) -- toggle terminal
 keymap("t", "<leader>st", "<c-\\><c-n>:ToggleTerm<cr>", silent_opts) -- toggle terminal
-keymap({"n", "i", "v"}, "<leader>sb", ":TagbarToggle<cr>", opts) -- toggle tagbar
+keymap({ "n", "i", "v" }, "<leader>sb", ":TagbarToggle<cr>", opts) -- toggle tagbar
 
 -- keybindings for telescope
 keymap("n", "<leader>tf", ":Telescope find_files<cr>", opts)
@@ -114,8 +110,8 @@ keymap("n", "<leader>tb", ":Telescope buffers<cr>", opts)
 keymap("n", "<leader>oa", ":call QuickFixOpenAll()<cr>", opts)
 
 function Run_cmake()
-    local cmd = "CMakeRun " .. vim.fn.expand('%:h:t:r')
-    vim.cmd(cmd)
+	local cmd = "CMakeRun " .. vim.fn.expand("%:h:t:r")
+	vim.cmd(cmd)
 end
 -- keybindings for cmake
 keymap("n", "<leader>cg", "<Plug>(CMakeGenerate)", opts)
@@ -133,88 +129,87 @@ vim.cmd("cnoreabbrev ctest CMakeTest -V -R")
 
 -- nvim-dap key bindings
 keymap("n", "<F1>", function()
-    local dap, dapui = require("dap"), require("dapui")
-    require'fzf-lua'.files({
-        cmd = 'fd --no-ignore -t x',
-        actions = {
-            ['default'] = function(selected)
-                dap.configurations.cpp = {
-                    {
-                        name = "Launch",
-                        type = "codelldb",
-                        request = "launch",
-                        program = require'fzf-lua'.path.entry_to_file(
-                            selected[1]).path,
-                        cwd = "${workspaceFolder}",
-                        stopOnEntry = false,
-                        args = {},
-                        runInTerminal = true
-                    }
-                }
-                -- run DAP
-                dapui.open()
-                dap.continue()
-            end
-        }
-    })
+	local dap, dapui = require("dap"), require("dapui")
+	require("fzf-lua").files({
+		cmd = "fd --no-ignore -t x",
+		actions = {
+			["default"] = function(selected)
+				dap.configurations.cpp = {
+					{
+						name = "Launch",
+						type = "codelldb",
+						request = "launch",
+						program = require("fzf-lua").path.entry_to_file(selected[1]).path,
+						cwd = "${workspaceFolder}",
+						stopOnEntry = false,
+						args = {},
+						runInTerminal = true,
+					},
+				}
+				-- run DAP
+				dapui.open()
+				dap.continue()
+			end,
+		},
+	})
 end, silent_opts)
 keymap("n", "<F3>", function()
-    require("dap").step_over()
+	require("dap").step_over()
 end, silent_opts)
 keymap("n", "<F2>", function()
-    require("dap").step_into()
+	require("dap").step_into()
 end, silent_opts)
 keymap("n", "<F4>", function()
-    require("dap").step_out()
+	require("dap").step_out()
 end, silent_opts)
 keymap("n", "<leader>db", function()
-    require("dap").toggle_breakpoint()
+	require("dap").toggle_breakpoint()
 end, silent_opts)
 keymap("n", "<leader>dB", function()
-    require("dap").set_breakpoint()
+	require("dap").set_breakpoint()
 end, silent_opts)
 keymap("n", "<leader>dg", function()
-    require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+	require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 end, silent_opts)
 keymap("n", "<leader>dr", function()
-    require("dap").repl.open()
+	require("dap").repl.open()
 end, silent_opts)
 keymap("n", "<leader>dl", function()
-    require("dap").run_last()
+	require("dap").run_last()
 end, silent_opts)
 keymap("n", "<leader>dc", function()
-    require("dap").run_to_cursor()
+	require("dap").run_to_cursor()
 end, silent_opts)
-keymap({"n", "v"}, "<leader>dh", function()
-    require("dap.ui.widgets").hover()
+keymap({ "n", "v" }, "<leader>dh", function()
+	require("dap.ui.widgets").hover()
 end, silent_opts)
-keymap({"n", "v"}, "<leader>dp", function()
-    require("dap.ui.widgets").preview()
+keymap({ "n", "v" }, "<leader>dp", function()
+	require("dap.ui.widgets").preview()
 end, silent_opts)
 keymap("n", "<leader>df", function()
-    local widgets = require("dap.ui.widgets")
-    widgets.centered_float(widgets.frames)
+	local widgets = require("dap.ui.widgets")
+	widgets.centered_float(widgets.frames)
 end, silent_opts)
 keymap("n", "<leader>ds", function()
-    local widgets = require("dap.ui.widgets")
-    widgets.centered_float(widgets.scopes)
+	local widgets = require("dap.ui.widgets")
+	widgets.centered_float(widgets.scopes)
 end, silent_opts)
 
 keymap("n", "<leader>uo", function()
-    require("dapui").open()
+	require("dapui").open()
 end, silent_opts)
 keymap("n", "<leader>uc", function()
-    require("dapui").close()
+	require("dapui").close()
 end, silent_opts)
 
 -- terminate dap and close dapui window
 keymap("n", "<leader>dt", function()
-    require("dap").terminate()
-    require("dapui").close()
+	require("dap").terminate()
+	require("dapui").close()
 end, silent_opts)
 
 -- system shortcut for copy
-keymap('v', '<leader>y', '"+y', opts)
+keymap("v", "<leader>y", '"+y', opts)
 
 -- vifm
-keymap('n', '<leader>vf', ':Vifm -c only<cr>')
+keymap("n", "<leader>vf", ":Vifm -c only<cr>")
