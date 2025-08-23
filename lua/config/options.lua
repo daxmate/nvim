@@ -17,9 +17,6 @@ for k, v in pairs(options) do
 	opt[k] = v
 end
 
--- maplocalleader
-g.maplocalleader = "," -- 设置 vimtex 插件的 maplocalleader
-g.mapleader = ","
 
 -- 文件类型和缩进
 vim.cmd("filetype plugin indent on")
