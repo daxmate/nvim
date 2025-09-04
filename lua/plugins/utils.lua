@@ -35,4 +35,10 @@ return {
 	},
 	"nvim-tree/nvim-web-devicons",
 	"famiu/bufdelete.nvim",
+	{
+		"dhruvasagar/vim-prosession",
+		dependencies = {
+			"tpope/vim-obsession",
+		},
+	},
 }

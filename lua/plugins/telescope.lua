@@ -30,5 +30,6 @@ return {
 		local telescope = require("telescope")
 		telescope.setup(opts)
 		telescope.load_extension("live_grep_args")
+		telescope.load_extension("prosession")
 	end,
 }

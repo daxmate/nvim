@@ -219,3 +219,5 @@ vim.api.nvim_set_keymap(
 	':w<CR>:lua if vim.bo.filetype == "python" then vim.api.nvim_command("term python3 " .. vim.fn.expand("%")) else print("Not a Python file") end<CR>',
 	{ noremap = true, silent = true }
 )
+
+vim.keymap.set('n', '<Leader>tp', '<cmd>Telescope prosession<CR>')
