@@ -85,6 +85,9 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
 					{ name = "path" },
+					per_filetype = {
+						codecompanion = { "codecompanion" },
+					},
 				}),
 				window = {
 					documentation = {
