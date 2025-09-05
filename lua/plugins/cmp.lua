@@ -25,6 +25,7 @@ return {
 			"hrsh7th/cmp-path",
 			"quangnguyen30192/cmp-nvim-ultisnips",
 			"saadparwaiz1/cmp_luasnip", -- 可选，如果你也用 luasnip
+			"olimorris/codecompanion.nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -81,13 +82,11 @@ return {
 					end,
 				},
 				sources = cmp.config.sources({
+					{ name = "codecompanion" },
 					{ name = "ultisnips" },
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
 					{ name = "path" },
-					per_filetype = {
-						codecompanion = { "codecompanion" },
-					},
 				}),
 				window = {
 					documentation = {
