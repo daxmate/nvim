@@ -5,12 +5,6 @@ return {
 	"tpope/vim-eunuch", -- unix shell commands
 	"tpope/vim-surround", -- operations on pairs
 	"tpope/vim-repeat",
-	{
-		"sbdchd/neoformat",
-		config = function()
-			vim.g.neoformat_try_formatprg = 1
-		end,
-	},
 	"easymotion/vim-easymotion", -- easymotion
 	{
 		"nanotee/zoxide.vim", -- use zoxide in vim
