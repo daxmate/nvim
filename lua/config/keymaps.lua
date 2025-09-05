@@ -89,9 +89,6 @@ keymap("t", "<leader>wl", "<c-\\><c-n>:wincmd l<cr>", silent_opts) -- move curso
 keymap("n", "<s-right>", ":vertical resize +2<cr>", opts)
 keymap("n", "<s-left>", ":vertical resize -2<cr>", opts)
 
--- formatter
-keymap("n", "<leader>f", ":Neoformat<cr>", silent_opts)
-
 -- switches  -- starts with s
 keymap("n", "<leader>se", ":NvimTreeToggle<cr>", opts) -- toggle explorer on the left
 keymap("n", "<leader>sl", ":set list!<cr>", opts) -- toggle list mode
@@ -220,4 +217,4 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
-vim.keymap.set('n', '<Leader>tp', '<cmd>Telescope prosession<CR>')
+vim.keymap.set("n", "<Leader>tp", "<cmd>Telescope prosession<CR>")
