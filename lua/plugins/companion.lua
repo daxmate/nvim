@@ -6,6 +6,9 @@ return {
 	},
 	config = function()
 		require("codecompanion").setup({
+			opts = {
+				language = "Chinese",
+			},
 			adapters = {
 				http = {
 					deepseek = function()
