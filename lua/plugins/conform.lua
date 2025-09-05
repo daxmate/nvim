@@ -6,6 +6,7 @@ return {
 				lua = { "stylua" },
 				cpp = { "astyle" },
 				cmake = { "cmake_format" },
+				zsh = { "shfmt" },
 			},
 			formatters = {
 				astyle = {
