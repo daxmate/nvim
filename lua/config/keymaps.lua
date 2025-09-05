@@ -217,4 +217,6 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
-vim.keymap.set("n", "<Leader>tp", "<cmd>Telescope prosession<CR>")
+vim.keymap.set({ "n", "v" }, "<Leader>tp", "<cmd>Telescope prosession<CR>")
+vim.keymap.set({ "n", "v" }, "<Leader>cc", "<cmd>CodeCompanionChat<CR>")
+vim.keymap.set({ "n", "v" }, "<Leader>ca", "<cmd>CodeCompanionActions<CR>")
