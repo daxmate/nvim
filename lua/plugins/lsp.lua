@@ -13,7 +13,7 @@ return {
 			lspconfig.lua_ls.setup({
 				settings = {
 					Lua = {
-						runtime = { version = "Lua" },
+						runtime = { version = "Lua 5.4" },
 						diagnostics = {
 							globals = {
 								"vim",
