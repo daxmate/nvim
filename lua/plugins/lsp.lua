@@ -15,7 +15,17 @@ return {
 					Lua = {
 						runtime = { version = "Lua" },
 						diagnostics = {
-							globals = { "vim", "string", "table", "require", "Candidate", "yield", "local", "tex" },
+							globals = {
+								"vim",
+								"string",
+								"table",
+								"require",
+								"Candidate",
+								"yield",
+								"local",
+								"tex",
+								"hs",
+							},
 						},
 						workspace = {
 							library = vim.api.nvim_get_runtime_file("", true),
