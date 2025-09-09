@@ -7,6 +7,7 @@ return {
 				cpp = { "astyle" },
 				cmake = { "cmake_format" },
 				zsh = { "shfmt" },
+				python = { "black" },
 			},
 			formatters = {
 				astyle = {
