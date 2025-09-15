@@ -65,6 +65,9 @@ return {
 
 			-- CMake
 			lspconfig.cmake.setup({})
+
+			-- json
+			lspconfig.json.setup({})
 		end,
 	},
 }
