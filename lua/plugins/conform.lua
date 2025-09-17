@@ -8,6 +8,7 @@ return {
 				cmake = { "cmake_format" },
 				zsh = { "shfmt" },
 				python = { "black" },
+				json = {"jq"},
 			},
 			formatters = {
 				astyle = {
