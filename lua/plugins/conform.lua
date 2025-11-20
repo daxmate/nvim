@@ -8,7 +8,8 @@ return {
 				cmake = { "cmake_format" },
 				zsh = { "shfmt" },
 				python = { "black" },
-				json = {"jq"},
+				json = { "jq" },
+				tex = { "latexindent" },
 			},
 			formatters = {
 				astyle = {
@@ -30,6 +31,15 @@ return {
 						"--indent-modifiers",
 						"--align-pointer=type",
 					},
+				},
+				latexindent = {
+					command = "latexindent",
+					args = {
+						-- "-w",
+						"--GCString",
+						"-",
+					},
+					stdin = true,
 				},
 				cmake_format = {
 					command = "cmake-format",
