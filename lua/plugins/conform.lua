@@ -35,7 +35,7 @@ return {
 				latexindent = {
 					command = "latexindent",
 					args = {
-						-- "-w",
+						"-m",
 						"--GCString",
 						"-",
 					},
