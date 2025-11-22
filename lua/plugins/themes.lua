@@ -9,14 +9,19 @@ return {
 		end,
 	},
 	{
-		"vim-airline/vim-airline",
-		dependencies = { "vim-airline/vim-airline-themes" },
-		lazy = false,
-		priority = 1000,
-		init = function()
-			vim.g.airline_powerline_fonts = 1
-			vim.g["airline#extensions#tabline#enabled"] = 1
-			vim.g["airline#extensions#tabline#formatter"] = "short_path_improved"
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lualine").setup({
+				tabline = {
+					lualine_a = { "buffers" },
+					lualine_b = {},
+					lualine_c = {},
+					lualine_x = {},
+					lualine_y = {},
+					lualine_z = { "tabs" },
+				},
+			})
 		end,
 	},
 }
