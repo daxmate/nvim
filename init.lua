@@ -15,3 +15,4 @@ require("config.autocmd") -- 自动命令
 vim.cmd([[highlight GitSignsAdd guifg=#4d783f]])
 vim.cmd([[highlight GitSignsDelete guifg=#79323d]])
 vim.cmd([[highlight GitSignsChange guifg=#9c9d0d]])
+vim.cmd([[highlight lualine_a_normal guifg=#005e87]])
