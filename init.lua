@@ -10,9 +10,3 @@ require("config.options") -- 编辑器选项设置
 require("config.functions") -- 自定义函数j
 require("config.keymaps") -- 快捷键映射
 require("config.autocmd") -- 自动命令
-
--- 设置GitSigns的配色
-vim.cmd([[highlight GitSignsAdd guifg=#4d783f]])
-vim.cmd([[highlight GitSignsDelete guifg=#79323d]])
-vim.cmd([[highlight GitSignsChange guifg=#9c9d0d]])
-vim.cmd([[highlight lualine_a_normal guifg=#005e87]])
