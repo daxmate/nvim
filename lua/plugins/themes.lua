@@ -1,13 +1,15 @@
 return {
 	{
-		"NLKNguyen/papercolor-theme",
+		"pappasam/papercolor-theme-slim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			-- 主题和 airline
-			vim.cmd.colorscheme("PaperColor")
-		end,
 	},
+
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+	},
+
 	{
 		"nvim-lualine/lualine.nvim",
 		lazy = false,
@@ -15,7 +17,7 @@ return {
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "papercolor",
+					theme = "gruvbox",
 					section_separators = { left = "", right = "" },
 					component_separators = { left = "", right = "" },
 				},
