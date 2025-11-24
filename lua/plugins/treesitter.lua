@@ -10,7 +10,7 @@ return {
 		lazy = false,
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "python", "lua", "cpp", "vim", "markdown", "bash" },
+				ensure_installed = { "latex", "python", "lua", "cpp", "vim", "markdown", "bash" },
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
