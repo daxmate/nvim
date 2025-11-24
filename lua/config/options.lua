@@ -4,7 +4,7 @@ local g = vim.g
 
 -- 基本选项
 local options = {
-	background = "light", -- light background color
+	background = "dark", -- background color
 	number = true, -- 显示行号
 	textwidth = 120,
 	colorcolumn = "+1",
@@ -13,15 +13,16 @@ local options = {
 	softtabstop = 4,
 }
 
+vim.cmd([[colorscheme gruvbox]])
+
 for k, v in pairs(options) do
 	opt[k] = v
 end
-
 
 -- 文件类型和缩进
 vim.cmd("filetype plugin indent on")
 
 -- 高亮 EndOfBuffer（原 VimR 判断）
-if not g.gui_vimr then
-	vim.cmd("highlight EndOfBuffer ctermfg=bg")
-end
+-- if not g.gui_vimr then
+-- 	vim.cmd("highlight EndOfBuffer ctermfg=bg")
+-- end
