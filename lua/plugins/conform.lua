@@ -35,8 +35,10 @@ return {
 				latexindent = {
 					command = "latexindent",
 					args = {
+						"-r",
 						"-m",
 						"--GCString",
+						"-l=/Users/dax/.mylatexindent.yaml",
 						"-",
 					},
 					stdin = true,
