@@ -94,6 +94,7 @@ keymap("n", "<leader>se", ":NvimTreeToggle<cr>", opts) -- toggle explorer on the
 keymap("n", "<leader>sl", ":set list!<cr>", opts) -- toggle list mode
 -- keymap("n", "<leader>sd", ":Dashboard<cr>", opts) -- open bashboard
 keymap("n", "<leader>st", ":ToggleTerm direction=float<cr>", silent_opts) -- toggle terminal
+keymap("n", "<leader>tn", ":TermNew<cr>", silent_opts) -- toggle terminal
 keymap("t", "<leader>st", "<c-\\><c-n>:ToggleTerm<cr>", silent_opts) -- toggle terminal
 keymap({ "n", "i", "v" }, "<leader>sb", ":TagbarToggle<cr>", opts) -- toggle tagbar
 
