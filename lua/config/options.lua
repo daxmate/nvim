@@ -13,7 +13,7 @@ local options = {
 	softtabstop = 4,
 }
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd.colorscheme("solarized-osaka")
 
 for k, v in pairs(options) do
 	opt[k] = v

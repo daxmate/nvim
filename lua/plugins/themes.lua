@@ -9,6 +9,12 @@ return {
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 	},
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 
 	{
 		"nvim-lualine/lualine.nvim",
@@ -17,7 +23,7 @@ return {
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "gruvbox",
+					theme = "solarized-osaka",
 					section_separators = { left = "", right = "" },
 					component_separators = { left = "", right = "" },
 				},
