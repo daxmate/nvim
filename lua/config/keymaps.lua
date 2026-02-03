@@ -106,6 +106,7 @@ keymap("n", "<leader>tj", ":Telescope jumplist<cr>", opts)
 keymap("n", "<leader>tg", ":Telescope live_grep<cr>", opts)
 keymap("n", "<leader>tb", ":Telescope buffers<cr>", opts)
 keymap("n", "<leader>oa", ":call QuickFixOpenAll()<cr>", opts)
+keymap("n", "<Leader>tp", "<cmd>Telescope prosession<CR>")
 
 function Run_cmake()
 	local cmd = "CMakeRun " .. vim.fn.expand("%:h:t:r")
@@ -218,7 +219,6 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
-keymap({ "n", "v" }, "<Leader>tp", "<cmd>Telescope prosession<CR>")
 keymap({ "n", "v" }, "<Leader>cc", "<cmd>CodeCompanionChat<CR>")
 keymap({ "n", "v" }, "<Leader>ca", "<cmd>CodeCompanionActions<CR>")
 
