@@ -11,7 +11,10 @@ return {
 		config = function()
 			require("nvim-treesitter").setup({
 				ensure_installed = { "latex", "python", "lua", "cpp", "vim", "markdown", "bash" },
-				highlight = { enable = true },
+				highlight = {
+					enable = true,
+					disable = { "latex" },
+				},
 				indent = { enable = true },
 			})
 			vim.treesitter.language.register("bash", "zsh")
