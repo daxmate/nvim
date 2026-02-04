@@ -9,7 +9,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		lazy = false,
 		config = function()
-			require("nvim-treesitter.configs").setup({
+			require("nvim-treesitter").setup({
 				ensure_installed = { "latex", "python", "lua", "cpp", "vim", "markdown", "bash" },
 				highlight = { enable = true },
 				indent = { enable = true },
