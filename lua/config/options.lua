@@ -14,7 +14,7 @@ local options = {
 }
 
 vim.cmd.colorscheme("solarized-osaka")
-vim.cmd("formatoptions+=m")
+vim.cmd("set formatoptions+=m")
 
 for k, v in pairs(options) do
 	opt[k] = v
