@@ -1,4 +1,4 @@
-vim.g.python3_host_prog = "/Users/dax/.virtualenvs/pynvim/bin/python3"
+vim.g.python3_host_prog = "$HOME/.virtualenvs/pynvim/bin/python3"
 vim.cmd("let g:loaded_node_provider = 0")
 vim.cmd("let g:loaded_perl_provider = 0")
 vim.cmd("let g:loaded_ruby_provider = 0")
