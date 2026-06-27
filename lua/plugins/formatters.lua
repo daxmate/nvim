@@ -97,6 +97,20 @@ return {
 						}
 					end,
 				},
+				json = {
+					function()
+						return {
+							exe = "jq",
+							args = {
+								"--indent",
+								"4",
+								"--sort-keys",
+								".",
+							},
+							stdin = true,
+						}
+					end,
+				},
 
 				tex = {
 					function()
