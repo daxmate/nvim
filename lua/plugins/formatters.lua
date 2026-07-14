@@ -120,6 +120,7 @@ return {
 								"-r",
 								"-m",
 								"--GCString",
+								"-c=./build/",
 								"-l=/Users/dax/.mylatexindent.yaml",
 								"-",
 							},
