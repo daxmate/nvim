@@ -129,6 +129,54 @@ return {
 					end,
 				},
 
+				javascript = {
+					function()
+						return {
+							exe = "prettier",
+							args = {
+								"--stdin-filepath",
+								util.escape_path(util.get_current_buffer_file_path()),
+							},
+							stdin = true,
+						}
+					end,
+				},
+				javascriptreact = {
+					function()
+						return {
+							exe = "prettier",
+							args = {
+								"--stdin-filepath",
+								util.escape_path(util.get_current_buffer_file_path()),
+							},
+							stdin = true,
+						}
+					end,
+				},
+				typescript = {
+					function()
+						return {
+							exe = "prettier",
+							args = {
+								"--stdin-filepath",
+								util.escape_path(util.get_current_buffer_file_path()),
+							},
+							stdin = true,
+						}
+					end,
+				},
+				typescriptreact = {
+					function()
+						return {
+							exe = "prettier",
+							args = {
+								"--stdin-filepath",
+								util.escape_path(util.get_current_buffer_file_path()),
+							},
+							stdin = true,
+						}
+					end,
+				},
 				-- Use the special "*" filetype for defining formatter configurations on
 				-- any filetype
 				["*"] = {
